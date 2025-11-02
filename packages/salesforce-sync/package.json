@@ -1,0 +1,28 @@
+{
+  "name": "@b2bone/salesforce-sync",
+  "version": "1.0.0",
+  "description": "Salesforce CLI Integration & Sync Service",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "sync": "tsx src/index.ts",
+    "sync:opportunities": "tsx src/sync-opportunities.ts",
+    "sync:projects": "tsx src/sync-projects.ts",
+    "sync:assets": "tsx src/sync-assets.ts",
+    "scheduler": "tsx src/scheduler.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "dotenv": "^16.3.1",
+    "node-cron": "^3.0.3",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/node-cron": "^3.0.11",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  }
+}

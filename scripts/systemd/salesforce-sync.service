@@ -1,0 +1,21 @@
+[Unit]
+Description=B2B Portal Salesforce Sync Service
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/b2bONE
+ExecStart=/usr/bin/node /var/www/b2bONE/packages/salesforce-sync/dist/scheduler.js
+Restart=on-failure
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=salesforce-sync
+
+# Environment
+Environment=NODE_ENV=production
+EnvironmentFile=/var/www/b2bONE/packages/salesforce-sync/.env
+
+[Install]
+WantedBy=multi-user.target
